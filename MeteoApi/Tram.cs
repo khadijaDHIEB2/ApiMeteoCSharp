@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MeteoApi
+namespace TagApi
 {
     public class Tram
     {
@@ -9,5 +9,13 @@ namespace MeteoApi
 
         public string LongName
         { get; set; }
+
+        public Tram (string shortName, string longName)
+        {
+            ShortName = shortName;
+            LongName = longName;
+        }
+
+
     }
 }
