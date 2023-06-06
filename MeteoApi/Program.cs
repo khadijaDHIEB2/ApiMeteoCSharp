@@ -26,8 +26,8 @@ namespace MeteoApi
                 HttpResponseMessage response = await client.GetAsync("?reseaux=TRAM&codes=SEM_A");
                 if (response.IsSuccessStatusCode)
                 {
-                    Tram tram = await response.Content.ReadAsAsync<Tram>();
-                    Console.WriteLine("Id:{0}\tName:{1}", tram.LongName, tram.ShortName);
+                    List<Tram> trams = await response.Content.ReadAsAsync<List<Tram>>();
+                    Console.WriteLine("Id:{0}\tName:{1}", trams[0].LongName, trams[0].ShortName);
                 }
                 else
                 {
